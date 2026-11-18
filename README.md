@@ -18,14 +18,14 @@
 | 2차 | 큰 코드베이스·증상과 원인 분리 | 성공 B 28 / F 28 / P 30(30회 중). F ×1.87, P ×1.35, 요약 L ×1.05~1.12 | [ADR-0002](docs/adr/0002-second-experiment-design.md) |
 | 3차 | 모델이 모르는 벤더 동작 카드 | Sonnet L 0.42 / P 0.49 / F 0.53, Haiku 0.55 / 0.61 / 0.64 | [ADR-0003](docs/adr/0003-project-specific-knowledge-experiment.md) |
 | 4차 | 카드가 낡았으면? 카드 300장이면? | 낡은 카드: Sonnet 성공 17~22/30, ÷B 1.08~1.27. 300장 F: 120/120 성공, ÷B 0.73~0.79 | [ADR-0004](docs/adr/0004-stale-cards-and-archive-scale.md) |
-| 5차-a | 낡은 카드 방어 | 버전 대조 지시: Sonnet 90/90, ÷B 0.74. Haiku 80/90(탐침 결과를 카드 쪽으로 오독). 카드에 버전 줄만 넣기: 효과 없음 | [ADR-0005](docs/adr/0005-stale-card-defense.md) |
+| 5차-a | 낡은 카드 방어 | 버전 대조 지시: Sonnet 90/90, ÷B 0.74. Haiku 80/90(프로브 결과를 카드 쪽으로 오독). 카드에 버전 줄만 넣기: 효과 없음 | [ADR-0005](docs/adr/0005-stale-card-defense.md) |
 | 5차-b | 의사결정 기록(변경 요청 과제) | 결정 위반 B: Sonnet 10/30, Haiku 6/30. 기록 arm: 0/180. ÷B 0.88~1.21 | [ADR-0006](docs/adr/0006-decision-history-experiment.md) |
 
 - arm: B = 기록 없음, L = 결론 요약 2~3줄, P = 정답 기록 경로, F = 아카이브 인덱스에서 스스로 찾기.
 - 차수별 분석: `results*/analysis.md`. 실행 기록: `docs/measurement-log.md`.
 - 아래는 1차 실험 당시의 구조 설명이다. 2차부터는 `cases-vN/`·`oracle-vN/`·`archive-vN/`·`results-vN*/`를 차수별로 따로 둔다.
 
-study-note `issue/` 카드(실전 이슈 아카이브)가 버그 수정에 얼마나 도움이 되는지 재기 위한 실험장.
+study-note `issue/` 카드(실전 이슈 아카이브)가 버그 수정에 얼마나 도움이 되는지 재기 위한 실험 저장소.
 같은 버그를 두 방식으로 고치게 하고 `claude -p --output-format json`의 토큰 사용량을 비교한다.
 
 - **A (아카이브 참조)**: 증상 + 해당 이슈 카드를 받고 수정
